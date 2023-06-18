@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cachupin - Tallas</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="style.css">
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript%}
+        {%load static%}
+        <link rel="stylesheet" href="{% static 'css/style.css'%}">
+        
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+            <div class="container">
+                <a href="#" class="navbar-brand"><span class="text-primary">Cachu</span>Pin</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarS"
+                    aria-controls="navbarS" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarS">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a href="{%url 'login'%}" class="nav-link">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{%url 'main'%}" class="nav-link">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{%url 'catalogo'%}" class="nav-link">Catálogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{%url 'perros'%}" class="nav-link">Perros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{%url 'gatos'%}" class="nav-link">Gatos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{%url 'tallas'%}" class="nav-link">Tallas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{%url 'suscripciones'%}" class="nav-link">Suscripciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{%url 'nosotros'%}" class="nav-link">Nosotros</a>
+                        </li>
+                        
+                    </ul>
+                    <div>
+                        <a href="{%url 'carrito'%}" class="text-decoration-none" >
+                            <i class="bi bi-cart"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+
+        <body>
+
+
+        
+                <div class="dogs">
+                    <div class="banner-perro">
+                        <h1>Guia de tallas</h1>
+                        <img src="{%static '/img/tallas.png'%}" alt="Banner" style="margin-bottom: 20px;" width="100%">
+
+                        <!--Tallas PERROS Y GATOS-->
+
+                        <section>
+                            <div class="row col-12 tallas-perro">
+                                <h2><b>Tallas para perros y gatos</b></h2>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis eget nisl sit amet ultricies. Pellentesque dapibus sodales posuere. Nulla facilisis pharetra magna, eu aliquet dui pretium at. Maecenas vulputate sodales ultricies. Phasellus consequat auctor libero. Mauris ac metus augue. Vivamus vehicula, nibh ac vulputate porta, sapien lacus efficitur purus, a ultricies nisi ipsum nec enim. Proin imperdiet metus ut lectus blandit, quis rhoncus leo ornare. Ut congue mi id purus dapibus sagittis. Integer ac lacinia quam. Aliquam ultricies ex eget erat gravida tristique. Etiam egestas mattis tincidunt. Pellentesque rutrum nisl ut ex sodales, ac ornare turpis auctor.</p>
+
+                                <table class="table table-bordered table-sizegudie"><thead><tr><th class="nobordered-cell"></th><th><strong><span style="color:#333333;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">longitud de espalda</span></span></strong></th><th><strong><span style="color:#333333;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">Peso</span></span></strong></th><th><strong><span style="color:#333333;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">Ejemplos de razas solo para información</span></span></strong></th></tr></thead><tbody><tr><td class="bordered-cell"><strong><span style="color:#333333;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">XXS</span></span></strong></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">15cm</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">0,5 - 0,8 kg</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">cachorrito, perrito chihuahua, gatita...</span></span></td></tr><tr><td class="bordered-cell"><strong><span style="color:#333333;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">XS</span></span></strong></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">20 centímetros</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">1 - 1,8 kg</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">cachorro, pequeño chihuahua, pequeño pinsher...</span></span></td></tr><tr><td class="bordered-cell"><strong><span style="color:#333333;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">S</span></span></strong></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">25cm</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">2 - 2,8 kg</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">Yorkshire pequeño, Chihuahua, Spitz enano...</span></span></td></tr><tr><td class="bordered-cell"><strong><span style="color:#333333;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">METRO</span></span></strong></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">30 centimetros</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">3 - 3,8 kg</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">Yorkshire, Caniche Toy, Pinsher, Spitz, Pomerania...</span></span></td></tr><tr><td class="bordered-cell"><strong><span style="color:#333333;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">I</span></span></strong></td><td><span style="font-size:14px;">35cm</span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">4 - 4,8 kg</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">Bichón, Pequinés, Gran Yorkshire, Crestado Chino...</span></span></td></tr><tr><td class="bordered-cell"><strong><span style="color:#333333;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">SG</span></span></strong></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">40cm</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">5 - 6,8 kg</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">Caniche, Shitzu, Cairn Terrier, Pug, Jack Russel, Lhasa Apso, Cavalier King Charles...</span></span></td></tr><tr><td class="bordered-cell"><strong><span style="color:#333333;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">2XL</span></span></strong></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">45cm</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">7 - 12 kg</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">Fox terrier, bulldog francés, pastor de los pirineos, pug, westie, teckel...</span></span></td></tr><tr><td class="bordered-cell"><strong><span style="color:#333333;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">3XL</span></span></strong></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">50cm</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">13 -17 kg</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">Cocker Spaniel, Cocker Spaniel Americano, Beagle...</span></span></td></tr><tr><td class="bordered-cell"><strong><span style="color:#333333;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">4XL</span></span></strong></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">55cm</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">17 - 25 kg</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">Sharpei, Bulldog Inglés, Spaniel Brittany, Bull Terrier, Border Collie, Collie...</span></span></td></tr><tr><td class="bordered-cell"><strong><span style="color:#333333;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">5XL</span></span></strong></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">60cm</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">26 - 35 kg</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">Golden Retreiver, Labrador, Husky, Boxer, Briard, Dálmata...</span></span></td></tr><tr><td class="bordered-cell"><strong><span style="color:#333333;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">6XL</span></span></strong></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">65cm</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">36 - 40 kg</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">Bulldog Americano, Dogo Argentino, Bobtail...</span></span></td></tr><tr><td class="bordered-cell"><strong><span style="color:#333333;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">7XL</span></span></strong></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">70cm</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">41 - 50 kg</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">Beauceron, Boyero de Berna, Terranova, Cane Corso, Bullmastiff,</span></span> Dogo de Burdeos, Doberman...</td></tr><tr><td class="bordered-cell"><strong><span style="color:#333333;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">8XL</span></span></strong></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">75cm</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">51 - 75 kg</span></span></td><td><span style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-size:14px;">Montaña de los Pirineos, San Bernardo, Gran Danés, Leonberger...</span></span></td></tr></tbody></table>
+                            </div>
+                        </section>
+
+        
+
+        
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+                            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+                            crossorigin="anonymous">
+                            </script>
+                    
+        
+            </body>
+    
+                    <!-- DERECHOS Y REDES -->
+                    <footer class="bg-dark p-2 text-left ">
+                        <div class="container">
+    
+                        <!--Redes sociales-->                 
+                            <div class="redes-titulo">
+                                <h3 class="text-white" ><b>Siguenos</b></h3>
+                            </div>
+                            
+                            <!--Facebook-->
+                            <a  class="btn text-white m-1" 
+                                href="#" role="button" 
+                                data-mdb-ripple-color="dark">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+    
+                            <!--Instagram-->
+                            <a  class="btn text-white m-1" 
+                                href="#" role="button" 
+                                data-mdb-ripple-color="dark">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+    
+    
+                            <!--Twitter-->
+                            <a  class="btn text-white m-1" 
+                                href="#" role="button" 
+                                data-mdb-ripple-color="dark">
+                                <i class="bi bi-twitter"></i>
+                            </a>
+                            
+                            <!--LinkedIn-->
+                            <a  class="btn text-white m-1" 
+                                href="#" role="button" 
+                                data-mdb-ripple-color="dark">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+    
+                            <!--Github-->
+                            <a  class="btn text-white m-1" 
+                                href="#" role="button" 
+                                data-mdb-ripple-color="dark">
+                                <i class="bi bi-github"></i>
+                            </a>
+    
+                        </div>
+    
+                    </footer>
+    
+                            <!--Derechos-->
+                            <footer class="text-center" style="background-color: gray;">
+                                <div>
+                                    <p class="text-white"> ©Cachupin - Todos los derechos reservados </p>
+                                </div>
+                            </footer>
+    
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+                        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+                        crossorigin="anonymous">
+                        </script>
+                
+    
+        </body>
+
+        
+    </body>
+</html>
