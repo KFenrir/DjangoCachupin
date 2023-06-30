@@ -9,31 +9,42 @@ def main(request):
     return render(request, "pages/main.html", context)
 
 def login(request):
-    context={}
-    return render(request, "pages/login.html", context)
+    context = {}
+    
+    if request.method != "POST":
+        return render(request, "pages/login.html", context)
+    else:
+        correo = request.POST["correo"]
+        contraseña = request.POST["password"]
+        if correo == "correo" and contraseña == "password":
+            request.session["correo"] = correo
+            usuarios = Cliente.objects.all()
+            context = {"usuario": usuarios}
+            return render(request, "pages/main.html", context)
+        else:
+            context = {"mensaje": "Usuario y/o Contraseña incorrecto"}
+            return render(request, "pages/login.html", context)
 
 def registro(request):
     if request.method != "POST":
         cliente = Cliente.objects.all()
-        context = {"cliente":cliente}
-        return render(request, "pages/Registro.html", context)
+        context = {"cliente" : cliente}
+        return render(request, "pages/registro.html", context)
     else:
-        correo = request.POST["correo"]
         nombre = request.POST["nombre"]
-        apellidos = request.POST["apellido"]
-        region = request.POST["regiones"]
-        comuna = request.POST["comunas"]
-        direccion = request.POST["direccion"]
+        apPaterno = request.POST["apPaterno"]
+        apMaterno = request.POST["apMaterno"]
+        correo = request.POST["correo"]
         contraseña = request.POST["password"]
         confirmar_contraseña = request.POST["password2"]
+        region = request.POST["regiones"]
         
     objCliente = Cliente.objects.create(
         correo = correo,
         nombre = nombre,
-        apellidos = apellidos,
+        apPaterno = apPaterno,
+        apMaterno = apMaterno,
         region = region,
-        comuna = comuna,
-        direccion = direccion,
         contraseña = contraseña,
         confirmar_contraseña = confirmar_contraseña,
     )
