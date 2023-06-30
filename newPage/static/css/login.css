@@ -4,13 +4,13 @@
 
 }
 .screen{
-    background-image: url(perro-fondo.jpg);
+    background-image: url(../img/perro-fondo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
 .body{
-    background-image: url(/static/img/gato-teclado.jpg);
+    background-image: url(../img/gato-teclado.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

@@ -1,7 +1,6 @@
 .bodyRe{
-    background-image: url(img-proyecto/gato-teclado.jpg);
+    background-image: url(../img/gato-teclado.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
-

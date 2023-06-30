@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Cliente
 
 # Create your views here.
 
@@ -12,8 +13,35 @@ def login(request):
     return render(request, "pages/login.html", context)
 
 def registro(request):
-    context={}
-    return render(request, "pages/registro.html", context)
+    if request.method != "POST":
+        cliente = Cliente.objects.all()
+        context = {"cliente":cliente}
+        return render(request, "pages/Registro.html", context)
+    else:
+        correo = request.POST["correo"]
+        nombre = request.POST["nombre"]
+        apellidos = request.POST["apellido"]
+        region = request.POST["regiones"]
+        comuna = request.POST["comunas"]
+        direccion = request.POST["direccion"]
+        contraseña = request.POST["password"]
+        confirmar_contraseña = request.POST["password2"]
+        
+    objCliente = Cliente.objects.create(
+        correo = correo,
+        nombre = nombre,
+        apellidos = apellidos,
+        region = region,
+        comuna = comuna,
+        direccion = direccion,
+        contraseña = contraseña,
+        confirmar_contraseña = confirmar_contraseña,
+    )
+    objCliente.save()
+    print("Agregado con exito")
+    print(objCliente)
+    context = {"mensaje": "OK Registrado Correctamente"}
+    return render(request, "pages/login.html", context) 
 
 def gatos(request):
     context={}
