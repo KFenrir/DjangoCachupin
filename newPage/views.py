@@ -14,16 +14,8 @@ def login(request):
     if request.method != "POST":
         return render(request, "pages/login.html", context)
     else:
-        correo = request.POST["correo"]
-        contraseña = request.POST["password"]
-        if correo == "correo" and contraseña == "password":
-            request.session["correo"] = correo
-            usuarios = Cliente.objects.all()
-            context = {"usuario": usuarios}
-            return render(request, "pages/main.html", context)
-        else:
-            context = {"mensaje": "Usuario y/o Contraseña incorrecto"}
-            return render(request, "pages/login.html", context)
+        username = request.POST["correo"]
+        password = request.POST["contraseña"]
 
 def registro(request):
     if request.method != "POST":
@@ -31,13 +23,13 @@ def registro(request):
         context = {"cliente" : cliente}
         return render(request, "pages/registro.html", context)
     else:
-        nombre = request.POST["nombre"]
-        apPaterno = request.POST["apPaterno"]
-        apMaterno = request.POST["apMaterno"]
-        correo = request.POST["correo"]
-        contraseña = request.POST["password"]
-        confirmar_contraseña = request.POST["password2"]
-        region = request.POST["regiones"]
+        nombre = request.POST.get('correo')
+        apPaterno = request.POST.get('apPaterno')
+        apMaterno = request.POST.get('apMaterno')
+        correo = request.POST.get('correo')
+        contraseña = request.POST.get('contraseña')
+        confirmar_contraseña = request.POST.get('contraseña2')
+        region = request.POST.get('region')
         
     objCliente = Cliente.objects.create(
         correo = correo,
