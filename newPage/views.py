@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import Cliente
-
+from newPage.carrito import Carrito
+from .models import Cliente, Productos
 # Create your views here.
 
 
@@ -64,11 +64,34 @@ def bandana_gatos(request):
 
 def collar_gatos(request):
     context={}
-    return render(request, "pages/collar_gatos.html", context)
+    return render(request, "pages/carrito.html", context)
 
 def carrito(request):
     context={}
     return render(request, "pages/carrito.html", context)
+
+def agregar_producto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Productos.objects.get(id=producto_id)
+    carrito.agregar(producto)
+    return render(request, "pages/carrito.html")
+
+def eliminar_producto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Productos.objects.get(id=producto_id)
+    carrito.eliminar(producto)
+    return render(request, "pages/carrito.html")
+
+def restar_producto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Productos.objects.get(id=producto_id)
+    carrito.restar(producto)
+    return render(request, "pages/carrito.html")
+
+def limpiar_carrito(request):
+    carrito = Carrito(request)
+    carrito.limpiar()
+    return render(request, "pages/carrito.html")
 
 def catalogo(request):
     context={}
@@ -97,3 +120,7 @@ def bandana_perros(request):
 def collar_perros(request):
     context={}
     return render(request, "pages/collar_perros.html", context)
+
+def tienda(request):
+    productos = Productos.objects.all()
+    return render(request, "tienda.html", {'productos':Productos})

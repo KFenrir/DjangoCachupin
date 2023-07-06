@@ -13,21 +13,13 @@ class Cliente(models.Model):
     confirmar_contraseña = models.CharField(max_length=50, blank=False, null=False)
     region = models.CharField(max_length=50, blank=False, null=False)
     def __str__(self):
-        return str(self.nombre)
+        return str(self.nombre)+" "+str(self.apPaterno)+" "+str(self.apMaterno)
 
 
 class Productos(models.Model):
-    codigo = models.BigAutoField(primary_key=True)
+    codigo =    models.CharField(primary_key=True, max_length=20)
     nombre = models.CharField(max_length=50,blank=False, null=False )
     precio = models.IntegerField(blank=False, null=False)
-    catalogos = [('bandanas','Bandana.'),
-                        ('arnes','Arnes.'),
-                        ('collar','Collares.'),
-                        ('identificadores','Identificadores.'),
-                        ('productos','Producto.')
-                        ]
-    catalogo = models.CharField(max_length=25,default= 'producto', choices=catalogos)
-    descripcion = models.TextField(blank=True, null = False)
 
     def __str__(self):
-        return str(self.nombre)+" "+str(self.apPaterno)+" "+str(self.apMaterno)
+        return str(self.codigo)+" "+str(self.nombre)+" "+str(self.precio)
