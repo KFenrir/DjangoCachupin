@@ -19,64 +19,63 @@
 </head>
 
 <body>
+    <section>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a href="#" class="navbar-brand"><span class="text-primary">Cachu</span>Pin</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarS"
+                    aria-controls="navbarS" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <div class="collapse navbar-collapse" id="navbarS">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a href={%url 'login'%} class="nav-link">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href={%url 'main'%} class="nav-link">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{%url 'catalogo'%}" class="nav-link">Catálogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{%url 'perros'%}" class="nav-link">Perros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{%url 'gatos'%}" class="nav-link">Gatos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{%url 'tallas'%}" class="nav-link">Tallas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{%url 'suscripciones'%}" class="nav-link">Suscripciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{%url 'nosotros'%}" class="nav-link">Nosotros</a>
+                        </li>
 
-        <div class="container">
-            <a href="#" class="navbar-brand"><span class="text-primary">Cachu</span>Pin</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarS"
-                aria-controls="navbarS" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                    </ul>
+                    <div>
+                        <a href={%url 'carrito'%} class="text-decoration-none">
+                            <i class="bi bi-cart"></i>
+                        </a>
+                    </div>
 
-            <div class="collapse navbar-collapse" id="navbarS">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a href={%url 'login'%} class="nav-link">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href={%url 'main'%} class="nav-link">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{%url 'catalogo'%}" class="nav-link">Catálogo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{%url 'perros'%}" class="nav-link">Perros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{%url 'gatos'%}" class="nav-link">Gatos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{%url 'tallas'%}" class="nav-link">Tallas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{%url 'suscripciones'%}" class="nav-link">Suscripciones</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{%url 'nosotros'%}" class="nav-link">Nosotros</a>
-                    </li>
-
-                </ul>
-                <div>
-                    <a href={%url 'carrito'%} class="text-decoration-none">
-                        <i class="bi bi-cart"></i>
-                    </a>
                 </div>
-
             </div>
-        </div>
-    </nav>
+        </nav>
+    </section>
 
-    <div class="dogs">
+    <div >
         <div class="banner-perro">
-            <h1>Accesorios gato</h1>
             <img src="https://www.superzoo.cl/on/demandware.static/-/Library-Sites-SuperZooSharedLibrary/default/dw9f1288b1/SuperZoo/categorias/categorias-desktop/gato-accesorios.jpg"
-                alt="Banner" style="margin-bottom: 20px;">
+                alt="Banner" style="width: 100%">
 
             <!-- fila de productos -->
             <div class="row g-0">
                 <!-- Productos -->
-                <div class="col-md-4 mb-3">
+                <div class="col-12 col-md-12 col-lg-4">
                     <div class="card" style="width: 18rem;">
                         <img src="https://i.linio.com/p/811e6cc2da31c6cf81c87073975372c7-product.jpg"
                             class="card-img-top" alt="...">
@@ -91,7 +90,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 mb-3">
+                <div class="col-12 col-md-12 col-lg-4">
                     <div class="card" style="width: 18rem;">
                         <img src="https://ae01.alicdn.com/kf/H0ea73c3a01744c9d8d895473264c10613/Bandanas-para-perros-y-gatos-accesorios-de-Navidad-para-gatos-ajustable-lavable-triangular-a-cuadros-bufanda.jpg_.webp"
                             class="card-img-top" alt="...">
@@ -106,7 +105,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 mb-3">
+                <div class="col-12 col-md-12 col-lg-4">
                     <div class="card" style="width: 18rem;">
                         <img src="https://ae01.alicdn.com/kf/HTB15V74BLiSBuNkSnhJq6zDcpXap/Collar-de-liberaci-n-r-pida-para-gato-con-etiqueta-reflectante-personalizada-productos-para-cachorros-y.jpg_Q90.jpg_.webp"
                             class="card-img-top" alt="...">
