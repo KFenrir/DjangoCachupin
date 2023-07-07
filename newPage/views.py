@@ -1,6 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from newPage.carrito import Carrito
 from .models import Cliente, Productos
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
+
 # Create your views here.
 
 
@@ -16,6 +19,24 @@ def login(request):
     else:
         username = request.POST["correo"]
         password = request.POST["contraseña"]
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            usuario_logeado = Cliente.objects.last()
+            #username = form.cleaned_data['username']
+            messages.success(request, f"El usuario ha sido registrado exitosamente!")
+            carrito = Carrito()
+            carrito.usuario = usuario_logeado
+            carrito.total = 0
+            carrito.save()
+            return redirect('carrito.html')
+        else:
+            messages.success(request, "No se pudo registrar el usuario, vuelva a intenarlo!")
+
+    return render(request, 'pages/registro.html')
 
 def registro(request):
     if request.method != "POST":
@@ -74,24 +95,24 @@ def agregar_producto(request, producto_id):
     carrito = Carrito(request)
     producto = Productos.objects.get(id=producto_id)
     carrito.agregar(producto)
-    return render(request, "pages/carrito.html")
+    return render(request, "Tienda")
 
 def eliminar_producto(request, producto_id):
     carrito = Carrito(request)
     producto = Productos.objects.get(id=producto_id)
     carrito.eliminar(producto)
-    return render(request, "pages/carrito.html")
+    return render(request, "Tienda")
 
 def restar_producto(request, producto_id):
     carrito = Carrito(request)
     producto = Productos.objects.get(id=producto_id)
     carrito.restar(producto)
-    return render(request, "pages/carrito.html")
+    return render(request, "Tienda")
 
 def limpiar_carrito(request):
     carrito = Carrito(request)
     carrito.limpiar()
-    return render(request, "pages/carrito.html")
+    return render(request, "Tienda")
 
 def catalogo(request):
     context={}
@@ -123,4 +144,4 @@ def collar_perros(request):
 
 def tienda(request):
     productos = Productos.objects.all()
-    return render(request, "tienda.html", {'productos':Productos})
+    return render(request, "pages/tienda.html", {'productos':Productos})

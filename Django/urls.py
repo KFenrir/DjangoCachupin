@@ -17,7 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 
+from newPage.views import agregar_producto, eliminar_producto, limpiar_carrito, restar_producto
+from newPage import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('newPage/', include('newPage.urls'))
+    path('newPage/', include('newPage.urls')),
+    path('agregar/<int:producto_id>/',agregar_producto, name="Add"),
+    path('eliminar/<int:producto_id>/',eliminar_producto, name="Del"),
+    path('restar/<int:producto_id>/',restar_producto, name="Sub"),
 ]
